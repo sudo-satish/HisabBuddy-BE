@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ledgers",
+  "info": {
+    "singularName": "ledger",
+    "pluralName": "ledgers",
+    "displayName": "Ledger"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "customer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "supplier": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "transactionDate": {
+      "type": "datetime"
+    },
+    "transactionType": {
+      "type": "enumeration",
+      "enum": [
+        "Credit",
+        "Debit"
+      ]
+    },
+    "due": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
